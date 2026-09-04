@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .mark {
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: turn 2.8s cubic-bezier(.45, 0, .55, 1) infinite;
+    }
+
+    @keyframes turn {
+      0%, 18% { transform: perspective(120px) rotateX(0deg); }
+      48%, 68% { transform: perspective(120px) rotateX(-180deg); }
+      100% { transform: perspective(120px) rotateX(-360deg); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .mark { animation: none; }
+    }
+  </style>
+  <rect width="64" height="64" rx="7" fill="#675F56"/>
+  <g class="mark">
+    <path d="M10 53.5 27.6 10h8.8L54 53.5h-9.6L32 21.2 19.6 53.5H10Z" fill="#f2efef"/>
+  </g>
+</svg>

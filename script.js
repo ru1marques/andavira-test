@@ -5,6 +5,22 @@ const logoWrap = document.querySelector('.logo-wrap');
 const topNav = document.querySelector('.top-nav');
 const candidate = document.querySelector('.candidate');
 
+// O Chrome não reproduz animações CSS dentro de favicons SVG. A troca de frames
+// mantém a mesma rotação vertical e deixa o ficheiro SVG como fallback estático.
+const favicon = document.querySelector('#favicon');
+if (favicon && !reduceMotion) {
+  let faviconFrame = 0;
+  const totalFaviconFrames = 32;
+
+  window.setInterval(() => {
+    const angle = (faviconFrame / totalFaviconFrames) * Math.PI * 2;
+    const scaleY = Math.cos(angle);
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="7" fill="#675F56"/><g transform="translate(32 32) scale(1 ${scaleY.toFixed(3)}) translate(-32 -32)"><path d="M10 53.5 27.6 10h8.8L54 53.5h-9.6L32 21.2 19.6 53.5H10Z" fill="#f2efef"/></g></svg>`;
+    favicon.href = `data:image/svg+xml,${encodeURIComponent(svg)}`;
+    faviconFrame = (faviconFrame + 1) % totalFaviconFrames;
+  }, 90);
+}
+
 // Mantém a identidade e a navegação independentes do painel fixado do hero.
 document.body.append(logoWrap, topNav, candidate);
 document.querySelectorAll('.logo-front').forEach((face) => face.remove());

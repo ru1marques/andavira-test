@@ -8,14 +8,14 @@
 :root {
   font-family: "Andavira Geist", "Geist", Arial, sans-serif;
   color: #fff;
-  background: #000;
+  background: #675f56;
   font-synthesis: none;
   text-rendering: geometricPrecision;
 }
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
-html, body { margin: 0; min-width: 320px; background: #000; }
+html, body { margin: 0; min-width: 320px; background: #675f56; }
 body { overflow-x: hidden; }
 main { background: #f2efef; }
 img { display: block; max-width: 100%; }
@@ -735,10 +735,10 @@ img { display: block; max-width: 100%; }
 
 .site-footer { position: relative; z-index: 200; isolation: isolate; height: 100svh; min-height: 700px; margin-top: clamp(6rem, 12vh, 10rem); overflow: hidden; padding: 32vh 1.4vw 2.2rem; background: #6f6963; color: #f2efef; }
 .footer-word { position: absolute; left: 1.4vw; width: 97.2vw; max-width: none; height: auto; pointer-events: none; }
-.footer-word-top { top: 0; transform: scaleY(-1); }
+.footer-word-top { top: -2px; transform: scaleY(-1); }
 .footer-word-bottom { bottom: 0; }
 .footer-content { position: relative; z-index: 1; display: grid; grid-template-columns: 2fr 1fr; gap: 6vw; }
-.footer-information { display: flex; flex-direction: column; gap: 2.5rem; width: 100%; max-width: 900px; }
+.footer-information { display: flex; flex-direction: column; gap: 1.5rem; width: 100%; max-width: 900px; }
 .footer-info-row { display: grid; grid-template-columns: minmax(150px, 16vw) 1fr; font-size: 15px; line-height: 1.02; }
 .footer-label { color: rgba(242,239,239,.55); text-transform: uppercase; }
 .footer-info-row a, .footer-legal a { color: inherit; text-underline-offset: .12em; }
@@ -810,7 +810,7 @@ img { display: block; max-width: 100%; }
   .footer-word-top { top: 2rem; }
   .footer-word-bottom { bottom: 1rem; }
   .footer-content { grid-template-columns: 1fr; gap: 4rem; }
-  .footer-information { gap: 2rem; }
+  .footer-information { gap: 1.5rem; }
   .footer-info-row { grid-template-columns: 8rem 1fr; font-size: .9rem; }
   .newsletter-form { max-width: none; }
   .footer-legal { position: relative; left: auto; right: auto; bottom: auto; margin-top: 5rem; align-items: flex-start; gap: 2rem; }
