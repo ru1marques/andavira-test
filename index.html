@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ANDAVIRA — Animated Header</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-stage">
+        <div class="hero-media" aria-hidden="true">
+          <img src="assets/hero.jpg" alt="" />
+        </div>
+
+        <nav class="top-nav" aria-label="Menu principal">
+          <a href="#">Sobre</a>
+          <a href="#">Projetos</a>
+          <a href="#">Agenda</a>
+          <a href="#">Serviços</a>
+          <a href="#">Membros</a>
+        </nav>
+
+        <div class="logo-wrap" aria-label="ANDAVIRA">
+          <div class="logo-letters" id="logoLetters">
+            <!-- Cada letra é um plano 3D independente, mas ambas as camadas usam exatamente o mesmo path. -->
+            <div class="logo-letter" style="--x:0;--w:203.739">
+              <svg class="logo-face logo-front" viewBox="0 0 203.739 216" aria-hidden="true"><g transform="translate(0 0)"><path d="M0 215.581L77.7305 0H126.008L203.739 215.581H162.445L102.021 39.7762L41.2943 215.581H0Z" fill="white"/></g></svg>
+              <svg class="logo-face logo-inverted" viewBox="0 0 203.739 216" aria-hidden="true"><g transform="translate(0 0)"><path d="M0 215.581L77.7305 0H126.008L203.739 215.581H162.445L102.021 39.7762L41.2943 215.581H0Z" fill="white"/></g></svg>
+            </div>
+
+            <div class="logo-letter" style="--x:221.133;--w:178.537">
+              <svg class="logo-face logo-front" viewBox="0 0 178.537 216" aria-hidden="true"><g transform="translate(-221.133 0)"><path d="M221.133 215.581V0H267.285L360.198 162.141V0H399.67V215.581H352.303L260.605 57.9942V215.581H221.133Z" fill="white"/></g></svg>
+              <svg class="logo-face logo-inverted" viewBox="0 0 178.537 216" aria-hidden="true"><g transform="translate(-221.133 0)"><path d="M221.133 215.581V0H267.285L360.198 162.141V0H399.67V215.581H352.303L260.605 57.9942V215.581H221.133Z" fill="white"/></g></svg>
+            </div>
+
+            <div class="logo-letter" style="--x:435.594;--w:178.841">
+              <svg class="logo-face logo-front" viewBox="0 0 178.841 216" aria-hidden="true"><g transform="translate(-435.594 0)"><path d="M435.594 215.581V0H507.252C541.664 0 568.08 9.41268 586.5 28.238C605.123 46.861 614.435 73.4796 614.435 108.094C614.435 142.506 605.326 169.023 587.108 187.646C568.889 206.269 542.878 215.581 509.073 215.581H435.594ZM475.066 181.27H507.252C529.721 181.27 546.42 175.197 557.351 163.052C568.282 150.907 573.748 132.587 573.748 108.094C573.748 83.1959 568.282 64.6742 557.351 52.5288C546.42 40.3834 529.721 34.3107 507.252 34.3107H475.066V181.27Z" fill="white"/></g></svg>
+              <svg class="logo-face logo-inverted" viewBox="0 0 178.841 216" aria-hidden="true"><g transform="translate(-435.594 0)"><path d="M435.594 215.581V0H507.252C541.664 0 568.08 9.41268 586.5 28.238C605.123 46.861 614.435 73.4796 614.435 108.094C614.435 142.506 605.326 169.023 587.108 187.646C568.889 206.269 542.878 215.581 509.073 215.581H435.594ZM475.066 181.27H507.252C529.721 181.27 546.42 175.197 557.351 163.052C568.282 150.907 573.748 132.587 573.748 108.094C573.748 83.1959 568.282 64.6742 557.351 52.5288C546.42 40.3834 529.721 34.3107 507.252 34.3107H475.066V181.27Z" fill="white"/></g></svg>
+            </div>
+
+            <div class="logo-letter" style="--x:608.195;--w:203.739">
+              <svg class="logo-face logo-front" viewBox="0 0 203.739 216" aria-hidden="true"><g transform="translate(-608.195 0)"><path d="M608.195 215.581L685.926 0H734.204L811.934 215.581H770.64L710.217 39.7762L649.49 215.581H608.195Z" fill="white"/></g></svg>
+              <svg class="logo-face logo-inverted" viewBox="0 0 203.739 216" aria-hidden="true"><g transform="translate(-608.195 0)"><path d="M608.195 215.581L685.926 0H734.204L811.934 215.581H770.64L710.217 39.7762L649.49 215.581H608.195Z" fill="white"/></g></svg>
+            </div>
+
+            <div class="logo-letter" style="--x:776.57;--w:203.739">
+              <svg class="logo-face logo-front" viewBox="0 0 203.739 216" aria-hidden="true"><g transform="translate(-776.57 0)"><path d="M854.604 215.581L776.57 0H818.168L878.592 171.554L938.711 0H980.309L901.971 215.581H854.604Z" fill="white"/></g></svg>
+              <svg class="logo-face logo-inverted" viewBox="0 0 203.739 216" aria-hidden="true"><g transform="translate(-776.57 0)"><path d="M854.604 215.581L776.57 0H818.168L878.592 171.554L938.711 0H980.309L901.971 215.581H854.604Z" fill="white"/></g></svg>
+            </div>
+
+            <div class="logo-letter" style="--x:997.109;--w:39.471">
+              <svg class="logo-face logo-front" viewBox="0 0 39.471 216" aria-hidden="true"><g transform="translate(-997.109 0)"><path d="M997.109 215.581V0H1036.58V215.581H997.109Z" fill="white"/></g></svg>
+              <svg class="logo-face logo-inverted" viewBox="0 0 39.471 216" aria-hidden="true"><g transform="translate(-997.109 0)"><path d="M997.109 215.581V0H1036.58V215.581H997.109Z" fill="white"/></g></svg>
+            </div>
+
+            <div class="logo-letter" style="--x:1072.51;--w:168.21">
+              <svg class="logo-face logo-front" viewBox="0 0 168.21 216" aria-hidden="true"><g transform="translate(-1072.51 0)"><path d="M1072.51 215.581V0H1162.69C1178.27 0 1191.74 2.6315 1203.07 7.89451C1214.41 13.1575 1223.21 20.6472 1229.49 30.3635C1235.76 40.0798 1238.9 51.5167 1238.9 64.6742C1238.9 74.593 1236.77 83.3984 1232.52 91.0905C1228.27 98.7825 1222.5 104.956 1215.22 109.612C1208.13 114.268 1200.24 117.102 1191.53 118.114L1190.01 115.078C1203.98 115.078 1214.71 118.215 1222.2 124.49C1229.89 130.765 1234.24 140.38 1235.26 153.336L1240.72 215.581H1200.64L1196.09 159.105C1195.48 150.603 1192.75 144.328 1187.89 140.279C1183.03 136.231 1174.93 134.207 1163.6 134.207H1111.98V215.581H1072.51ZM1111.98 99.5922H1160.26C1172.2 99.5922 1181.51 96.7583 1188.19 91.0905C1194.87 85.4226 1198.21 77.4269 1198.21 67.1033C1198.21 56.5773 1194.77 48.4804 1187.89 42.8125C1181.21 37.1447 1171.39 34.3107 1158.44 34.3107H1111.98V99.5922Z" fill="white"/></g></svg>
+              <svg class="logo-face logo-inverted" viewBox="0 0 168.21 216" aria-hidden="true"><g transform="translate(-1072.51 0)"><path d="M1072.51 215.581V0H1162.69C1178.27 0 1191.74 2.6315 1203.07 7.89451C1214.41 13.1575 1223.21 20.6472 1229.49 30.3635C1235.76 40.0798 1238.9 51.5167 1238.9 64.6742C1238.9 74.593 1236.77 83.3984 1232.52 91.0905C1228.27 98.7825 1222.5 104.956 1215.22 109.612C1208.13 114.268 1200.24 117.102 1191.53 118.114L1190.01 115.078C1203.98 115.078 1214.71 118.215 1222.2 124.49C1229.89 130.765 1234.24 140.38 1235.26 153.336L1240.72 215.581H1200.64L1196.09 159.105C1195.48 150.603 1192.75 144.328 1187.89 140.279C1183.03 136.231 1174.93 134.207 1163.6 134.207H1111.98V215.581H1072.51ZM1111.98 99.5922H1160.26C1172.2 99.5922 1181.51 96.7583 1188.19 91.0905C1194.87 85.4226 1198.21 77.4269 1198.21 67.1033C1198.21 56.5773 1194.77 48.4804 1187.89 42.8125C1181.21 37.1447 1171.39 34.3107 1158.44 34.3107H1111.98V99.5922Z" fill="white"/></g></svg>
+            </div>
+
+            <div class="logo-letter" style="--x:1252.14;--w:203.74">
+              <svg class="logo-face logo-front" viewBox="0 0 203.74 216" aria-hidden="true"><g transform="translate(-1252.14 0)"><path d="M1252.14 215.581L1329.87 0H1378.15L1455.88 215.581H1414.59L1354.16 39.7762L1293.43 215.581H1252.14Z" fill="white"/></g></svg>
+              <svg class="logo-face logo-inverted" viewBox="0 0 203.74 216" aria-hidden="true"><g transform="translate(-1252.14 0)"><path d="M1252.14 215.581L1329.87 0H1378.15L1455.88 215.581H1414.59L1354.16 39.7762L1293.43 215.581H1252.14Z" fill="white"/></g></svg>
+            </div>
+          </div>
+        </div>
+
+        <a class="candidate hero-meta" href="#">Candidata-te</a>
+
+        <div class="hero-tagline hero-meta">
+          A TUA CARREIRA ARTÍSTICA,<br>
+          COM ESTRUTURA
+        </div>
+
+        <div class="scroll-cue" aria-hidden="true">
+          <span></span>
+          <small>scroll</small>
+        </div>
+
+        <footer class="footer hero-meta">
+          <div>Contactos: 917 289 805<br>NIPC: 518 789 542</div>
+          <div>Complexo IntraCooperativo da Cooperativa dos<br>Pedreiros [Oficina 2 RPEQoop]</div>
+          <div>Rua D. João IV, nº 1000<br>4000-300 Porto</div>
+        </footer>
+      </div>
+    </section>
+
+    <section class="next-section" aria-label="Secção de proposta">
+      <div class="showcase-shell">
+        <div class="feature-copy" aria-label="Mensagem principal">
+          <span>A CULTURA FAZ-SE EM CONJUNTO E É</span>
+          <span>DESSA VONTADE QUE NASCE UMA</span>
+          <span>ESTRUTURA <em>COOPERATIVA</em> PARA ARTISTAS</span>
+          <span>E PROFISSIONAIS DA CULTURA, COM</span>
+          <span>APOIO, FERRAMENTAS E ESPAÇO PARA</span>
+          <span>TRABALHAR, CRESCER E CONSTRUIR</span>
+          <span>CARREIRAS MAIS SUSTENTÁVEIS.</span>
+        </div>
+
+        <div class="visual-layer" aria-hidden="true">
+          <figure class="visual-card card-one"><img src="assets/imgs/03%203.png" alt=""></figure>
+          <figure class="visual-card card-two"><img src="assets/imgs/12%202.png" alt=""></figure>
+          <figure class="visual-card card-three"><img src="assets/imgs/ami3%201.png" alt=""></figure>
+          <figure class="visual-card card-four"><img src="assets/imgs/tri06%201.png" alt=""></figure>
+        </div>
+      </div>
+
+      <div class="stats-row" aria-label="Estatísticas da ANDAVIRA">
+        <div class="stat-item"><span class="value" data-count="48">48</span><span class="label">Membros</span></div>
+        <div class="stat-item"><span class="value" data-count="9">9</span><span class="label">Projetos</span></div>
+        <div class="stat-item"><span class="value" data-count="180" data-suffix="+">180+</span><span class="label">Atuações</span></div>
+        <div class="stat-item"><span class="value" data-count="3">3</span><span class="label">Parcerias</span></div>
+      </div>
+    </section>
+
+    <section class="services-section" aria-labelledby="services-title">
+      <div class="services-intro">
+        <span class="services-eyebrow">Como te podemos ajudar</span>
+        <h2 id="services-title">
+          <strong>Faturas o teu trabalho, tratamos da burocracia.</strong>
+          Somos artistas, técnicos e produtores que juntaram o seu conhecimento para construir uma plataforma que ajuda a gerir a tua carreira artística.
+        </h2>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="service-media">
+            <img src="assets/imgs/cards/Frame%20151-1.png" alt="Interface de faturação da plataforma ANDAVIRA">
+          </div>
+          <h3>Faturação e contabilidade tratadas</h3>
+          <p>Emissão de faturas e recibos, IVA, retenções e fecho de contas. Envias os dados do serviço e o resto acontece.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-media">
+            <img src="assets/imgs/cards/Frame%20151.png" alt="Dashboard de gestão da plataforma ANDAVIRA">
+          </div>
+          <h3>Gestão mais organizada</h3>
+          <p>Contratos, riders, faturas, fichas técnicas, registos de espetáculos e mais organizados e acessíveis a quem precisa.</p>
+        </article>
+
+        <article class="service-card">
+          <div class="service-media service-slider" aria-label="Galeria da comunidade ANDAVIRA">
+            <img class="service-slide is-active" src="assets/imgs/03%203.png" alt="Artistas a tocar juntos">
+            <img class="service-slide" src="assets/imgs/12%202.png" alt="Artistas em produção musical">
+            <img class="service-slide" src="assets/imgs/ami3%201.png" alt="Artista numa apresentação">
+            <img class="service-slide" src="assets/imgs/tri06%201.png" alt="Comunidade artística em atividade">
+            <div class="slider-dots" aria-hidden="true">
+              <span class="is-active"></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <h3>Comunidade de Artistas</h3>
+          <p>Músicos, técnicos de som, luz e produção que se recomendam, se substituem e partilham contactos e datas.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="projects-stack" aria-label="Projetos ANDAVIRA">
+      <article class="project-panel project-one">
+        <video class="project-video" autoplay muted loop playsinline preload="metadata">
+          <source src="assets/projects/Comp%201_comsom.mp4" type="video/mp4">
+        </video>
+        <div class="project-shade"></div>
+        <div class="project-topline">
+          <span class="project-tag">Projetos</span>
+        </div>
+        <span class="project-category">Agência de Artistas</span>
+        <a class="project-link" href="#">Conhecer mais</a>
+        <div class="project-description">
+          <h2>Rodopio — Culture and movement</h2>
+          <p>Rodopio is the cultural action department of AndaVira – Multidisciplinary Artistic Cooperative, CRL. Its mission is to give stage to the dynamic flow of ideas and artistic expressions of its members and guests. It seeks to promote, produce, edit, stimulate, interact, challenge, create - bringing artists and their audiences together, enhancing a diversity of contexts, and synergies.</p>
+        </div>
+      </article>
+
+      <article class="project-panel project-two">
+        <img class="project-video project-video-alt" src="assets/projects/keagan-henman-D4FXzUdr60s-unsplash%202.jpg" alt="Forja dos Sons">
+        <div class="project-shade project-shade-alt"></div>
+        <div class="project-topline">
+          <span class="project-tag">Projetos</span>
+        </div>
+        <span class="project-category">Produtora Musical</span>
+        <a class="project-link" href="#">Conhecer mais</a>
+        <div class="project-description">
+          <h2>Forje dos Sons — Criação, encontro e som</h2>
+          <p>A Forja dos Sons é uma produtora musical que ajuda músicos a transformar ideias em música. Acompanha cada artista ao longo do processo criativo, da composição e definição da identidade sonora à gravação, produção e finalização, criando as condições técnicas e artísticas necessárias para desenvolver cada projeto.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="belief-section" aria-labelledby="belief-title">
+      <h2 id="belief-title" class="belief-copy">ACREDITAMOS NO TRABALHO COLETIVO COMO MOTOR DE CRESCIMENTO E TRANSFORMAÇÃO.</h2>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
