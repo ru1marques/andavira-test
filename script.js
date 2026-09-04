@@ -3,9 +3,10 @@ gsap.registerPlugin(ScrollTrigger);
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const logoWrap = document.querySelector('.logo-wrap');
 const topNav = document.querySelector('.top-nav');
+const candidate = document.querySelector('.candidate');
 
 // Mantém a identidade e a navegação independentes do painel fixado do hero.
-document.body.append(logoWrap, topNav);
+document.body.append(logoWrap, topNav, candidate);
 document.querySelectorAll('.logo-front').forEach((face) => face.remove());
 
 const beliefCopy = document.querySelector('.belief-copy');
@@ -104,6 +105,10 @@ if (!reduceMotion) {
     ease: 'power2.inOut'
   }, 0).to('.top-nav', {
     top: '1.7vw',
+    right: 'calc(1.8vw + 108px + clamp(1rem, 1.4vw, 2.2rem))',
+    ease: 'power2.inOut'
+  }, 0).to('.candidate', {
+    top: '1.7vw',
     right: '1.8vw',
     ease: 'power2.inOut'
   }, 0);
@@ -173,6 +178,21 @@ if (!reduceMotion) {
     onEnter: () => document.body.classList.add('header-on-light'),
     onEnterBack: () => document.body.classList.add('header-on-light'),
     onLeaveBack: () => document.body.classList.remove('header-on-light')
+  });
+
+  ScrollTrigger.create({
+    trigger: '.capabilities-section',
+    start: 'top 72px',
+    onEnter: () => document.body.classList.add('header-on-light'),
+    onEnterBack: () => document.body.classList.add('header-on-light')
+  });
+
+  ScrollTrigger.create({
+    trigger: '.site-footer',
+    start: 'top 72px',
+    onEnter: () => document.body.classList.remove('header-on-light'),
+    onEnterBack: () => document.body.classList.remove('header-on-light'),
+    onLeaveBack: () => document.body.classList.add('header-on-light')
   });
 }
 
@@ -258,6 +278,38 @@ if (!reduceMotion) {
         yoyo: true
       });
     });
+  });
+
+  gsap.fromTo(['.capabilities-eyebrow', '.capabilities-list'], {
+    opacity: 0,
+    y: 42
+  }, {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    stagger: .12,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '.capabilities-section',
+      start: 'top 72%',
+      once: true
+    }
+  });
+
+  gsap.fromTo(['.agenda-eyebrow', '.agenda-event'], {
+    opacity: 0,
+    y: 34
+  }, {
+    opacity: 1,
+    y: 0,
+    duration: .9,
+    stagger: .1,
+    ease: 'power3.out',
+    scrollTrigger: {
+      trigger: '.agenda-section',
+      start: 'top 72%',
+      once: true
+    }
   });
 
   const imageLoop = gsap.timeline({ repeat: -1, repeatDelay: 0.15, paused: true });
