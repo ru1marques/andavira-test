@@ -1,0 +1,118 @@
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: #675F56;
+  color: #fff;
+  overscroll-behavior: none;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar { display: none; }
+
+#animation {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  background: #675F56;
+}
+
+.logo-wrap {
+  position: relative;
+  width: calc(93vw * var(--logo-size, 1));
+  aspect-ratio: 1456 / 216;
+  perspective: 1800px;
+  perspective-origin: 50% 45%;
+  pointer-events: auto;
+}
+
+.logo-letters {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  margin: 0;
+}
+
+.logo-letter {
+  position: absolute;
+  top: 0;
+  left: calc(var(--x) / 1456 * 100%);
+  width: calc(var(--w) / 1456 * 100%);
+  height: 100%;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+.logo-face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  backface-visibility: visible;
+  -webkit-backface-visibility: visible;
+  will-change: opacity, transform;
+}
+
+.logo-face path { fill: currentColor; }
+
+.logo-front {
+  display: none;
+}
+
+.logo-inverted {
+  z-index: 1;
+  opacity: 1;
+  transform: translateZ(-.6px) scaleY(-1);
+  transform-origin: 50% 50%;
+}
+
+
+@media (max-width: 800px) {
+  .logo-wrap { width: calc(91vw * var(--logo-size, 1)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-inverted { transform: none; }
+}
+
+.controls {
+  position: fixed;
+  z-index: 10;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  max-width: calc(100% - 32px);
+  padding: 14px 18px;
+  border: 1px solid #ffffff30;
+  border-radius: 12px;
+  background: #514a43;
+  font: 13px/1.4 system-ui, sans-serif;
+}
+
+.controls label { display: flex; align-items: center; gap: 10px; }
+.controls select {
+  padding: 6px 10px;
+  border: 1px solid #ffffff50;
+  border-radius: 6px;
+  background: #675F56;
+  color: #fff;
+  font: inherit;
+}
+.controls input { width: 130px; accent-color: #fff; cursor: pointer; }
+.controls output { min-width: 4ch; font-variant-numeric: tabular-nums; }
+.controls :focus-visible { outline: 2px solid white; outline-offset: 4px; }
+
+@media (max-width: 540px) {
+  .controls { flex-direction: column; gap: 12px; bottom: 16px; }
+}
+
+/* A área de hover mantém-se estável enquanto os planos 3D giram. */
+body[data-interaction="letters"] .logo-letters { pointer-events: none; }

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <title>ANDAVIRA — Animação</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <form class="controls" aria-label="Controlos da animação" onsubmit="return false">
+    <label>Interação
+      <select id="interaction-mode">
+        <option value="scroll">Scroll</option>
+        <option value="mouse">Rato</option>
+        <option value="letters">Rato por letra</option>
+      </select>
+    </label>
+    <label class="size-control" for="logo-size">Tamanho
+      <input id="logo-size" type="range" min="20" max="100" value="100" />
+      <output id="size-value" for="logo-size">100%</output>
+    </label>
+  </form>
+  <main id="animation" aria-label="Animação interativa ANDAVIRA">
+        <div class="logo-wrap" aria-label="ANDAVIRA">
+          <div class="logo-letters" id="logoLetters">
+            <div class="logo-letter" style="--x:0;--w:203.739">
+              <svg class="logo-face logo-inverted" viewBox="0 0 203.739 216" aria-hidden="true"><g transform="translate(0 0)"><path d="M0 215.581L77.7305 0H126.008L203.739 215.581H162.445L102.021 39.7762L41.2943 215.581H0Z" fill="white"/></g></svg>
+            </div>
+
+            <div class="logo-letter" style="--x:221.133;--w:178.537">
+              <svg class="logo-face logo-inverted" viewBox="0 0 178.537 216" aria-hidden="true"><g transform="translate(-221.133 0)"><path d="M221.133 215.581V0H267.285L360.198 162.141V0H399.67V215.581H352.303L260.605 57.9942V215.581H221.133Z" fill="white"/></g></svg>
+            </div>
+
+            <div class="logo-letter" style="--x:435.594;--w:178.841">
+              <svg class="logo-face logo-inverted" viewBox="0 0 178.841 216" aria-hidden="true"><g transform="translate(-435.594 0)"><path d="M435.594 215.581V0H507.252C541.664 0 568.08 9.41268 586.5 28.238C605.123 46.861 614.435 73.4796 614.435 108.094C614.435 142.506 605.326 169.023 587.108 187.646C568.889 206.269 542.878 215.581 509.073 215.581H435.594ZM475.066 181.27H507.252C529.721 181.27 546.42 175.197 557.351 163.052C568.282 150.907 573.748 132.587 573.748 108.094C573.748 83.1959 568.282 64.6742 557.351 52.5288C546.42 40.3834 529.721 34.3107 507.252 34.3107H475.066V181.27Z" fill="white"/></g></svg>
+            </div>
+
+            <div class="logo-letter" style="--x:608.195;--w:203.739">
+              <svg class="logo-face logo-inverted" viewBox="0 0 203.739 216" aria-hidden="true"><g transform="translate(-608.195 0)"><path d="M608.195 215.581L685.926 0H734.204L811.934 215.581H770.64L710.217 39.7762L649.49 215.581H608.195Z" fill="white"/></g></svg>
+            </div>
+
+            <div class="logo-letter" style="--x:776.57;--w:203.739">
+              <svg class="logo-face logo-inverted" viewBox="0 0 203.739 216" aria-hidden="true"><g transform="translate(-776.57 0)"><path d="M854.604 215.581L776.57 0H818.168L878.592 171.554L938.711 0H980.309L901.971 215.581H854.604Z" fill="white"/></g></svg>
+            </div>
+
+            <div class="logo-letter" style="--x:997.109;--w:39.471">
+              <svg class="logo-face logo-inverted" viewBox="0 0 39.471 216" aria-hidden="true"><g transform="translate(-997.109 0)"><path d="M997.109 215.581V0H1036.58V215.581H997.109Z" fill="white"/></g></svg>
+            </div>
+
+            <div class="logo-letter" style="--x:1072.51;--w:168.21">
+              <svg class="logo-face logo-inverted" viewBox="0 0 168.21 216" aria-hidden="true"><g transform="translate(-1072.51 0)"><path d="M1072.51 215.581V0H1162.69C1178.27 0 1191.74 2.6315 1203.07 7.89451C1214.41 13.1575 1223.21 20.6472 1229.49 30.3635C1235.76 40.0798 1238.9 51.5167 1238.9 64.6742C1238.9 74.593 1236.77 83.3984 1232.52 91.0905C1228.27 98.7825 1222.5 104.956 1215.22 109.612C1208.13 114.268 1200.24 117.102 1191.53 118.114L1190.01 115.078C1203.98 115.078 1214.71 118.215 1222.2 124.49C1229.89 130.765 1234.24 140.38 1235.26 153.336L1240.72 215.581H1200.64L1196.09 159.105C1195.48 150.603 1192.75 144.328 1187.89 140.279C1183.03 136.231 1174.93 134.207 1163.6 134.207H1111.98V215.581H1072.51ZM1111.98 99.5922H1160.26C1172.2 99.5922 1181.51 96.7583 1188.19 91.0905C1194.87 85.4226 1198.21 77.4269 1198.21 67.1033C1198.21 56.5773 1194.77 48.4804 1187.89 42.8125C1181.21 37.1447 1171.39 34.3107 1158.44 34.3107H1111.98V99.5922Z" fill="white"/></g></svg>
+            </div>
+
+            <div class="logo-letter" style="--x:1252.14;--w:203.74">
+              <svg class="logo-face logo-inverted" viewBox="0 0 203.74 216" aria-hidden="true"><g transform="translate(-1252.14 0)"><path d="M1252.14 215.581L1329.87 0H1378.15L1455.88 215.581H1414.59L1354.16 39.7762L1293.43 215.581H1252.14Z" fill="white"/></g></svg>
+            </div>
+          </div>
+        </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
