@@ -4,6 +4,19 @@ const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').match
 const logoWrap = document.querySelector('.logo-wrap');
 const topNav = document.querySelector('.top-nav');
 const candidate = document.querySelector('.candidate');
+const platformAccess = document.querySelector('.platform-access');
+
+const contactForm = document.querySelector('.contact-form');
+contactForm?.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const fields = new FormData(contactForm);
+  const name = fields.get('nome').trim();
+  const email = fields.get('email').trim();
+  const message = fields.get('mensagem').trim();
+  const subject = encodeURIComponent(`Contacto ANDAVIRA — ${name}`);
+  const body = encodeURIComponent(`Nome: ${name}\nEmail: ${email}\n\n${message}`);
+  window.location.href = `mailto:info@andavira.pt?subject=${subject}&body=${body}`;
+});
 
 // O Chrome não reproduz animações CSS dentro de favicons SVG. A troca de frames
 // mantém a mesma rotação vertical e deixa o ficheiro SVG como fallback estático.
@@ -22,7 +35,7 @@ if (favicon && !reduceMotion) {
 }
 
 // Mantém a identidade e a navegação independentes do painel fixado do hero.
-document.body.append(logoWrap, topNav, candidate);
+document.body.append(logoWrap, topNav, candidate, platformAccess);
 document.querySelectorAll('.logo-front').forEach((face) => face.remove());
 
 const beliefCopy = document.querySelector('.belief-copy');
@@ -30,8 +43,10 @@ if (beliefCopy) {
   const phrase = beliefCopy.textContent.trim();
   beliefCopy.setAttribute('aria-label', phrase);
   beliefCopy.textContent = '';
+  const lineBreaks = (beliefCopy.dataset.lineBreaks || '').split(',').map(Number);
 
   phrase.split(' ').forEach((word, wordIndex, words) => {
+    if (wordIndex > 0 && lineBreaks.includes(wordIndex)) beliefCopy.appendChild(document.createElement('br'));
     const wordElement = document.createElement('span');
     wordElement.className = 'belief-word';
     wordElement.setAttribute('aria-hidden', 'true');
@@ -54,8 +69,9 @@ if (!reduceMotion) {
   const flip = gsap.timeline({
     scrollTrigger: {
       trigger: '#hero',
-      start: 'top top',
-      end: '+=130%',
+      start: 0,
+      end: () => window.innerHeight * 1.3,
+      invalidateOnRefresh: true,
       scrub: true,
       pin: true,
       pinSpacing: true,
@@ -110,8 +126,9 @@ if (!reduceMotion) {
   const compactTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: '#hero',
-      start: 'bottom bottom',
-      end: '+=55%',
+      start: () => flip.scrollTrigger.end,
+      end: () => flip.scrollTrigger.end + window.innerHeight * .55,
+      invalidateOnRefresh: true,
       scrub: true
     }
   }).to('.logo-wrap', {
@@ -126,6 +143,10 @@ if (!reduceMotion) {
   }, 0).to('.candidate', {
     top: '1.7vw',
     right: '1.8vw',
+    ease: 'power2.inOut'
+  }, 0).to('.platform-access', {
+    top: window.innerWidth <= 800 ? '4rem' : '1.7vw',
+    left: window.innerWidth <= 800 ? '4vw' : '15vw',
     ease: 'power2.inOut'
   }, 0);
 
@@ -171,45 +192,7 @@ if (!reduceMotion) {
     }
   }, { passive: true });
 
-  ScrollTrigger.create({
-    trigger: '.next-section',
-    start: 'top 72px',
-    end: 'bottom top',
-    onEnter: () => document.body.classList.add('header-on-light'),
-    onEnterBack: () => document.body.classList.add('header-on-light'),
-    onLeaveBack: () => document.body.classList.remove('header-on-light')
-  });
 
-  ScrollTrigger.create({
-    trigger: '.projects-stack',
-    start: 'top 72px',
-    onEnter: () => document.body.classList.remove('header-on-light'),
-    onEnterBack: () => document.body.classList.remove('header-on-light'),
-    onLeaveBack: () => document.body.classList.add('header-on-light')
-  });
-
-  ScrollTrigger.create({
-    trigger: '.belief-section',
-    start: 'top 72px',
-    onEnter: () => document.body.classList.add('header-on-light'),
-    onEnterBack: () => document.body.classList.add('header-on-light'),
-    onLeaveBack: () => document.body.classList.remove('header-on-light')
-  });
-
-  ScrollTrigger.create({
-    trigger: '.capabilities-section',
-    start: 'top 72px',
-    onEnter: () => document.body.classList.add('header-on-light'),
-    onEnterBack: () => document.body.classList.add('header-on-light')
-  });
-
-  ScrollTrigger.create({
-    trigger: '.site-footer',
-    start: 'top 72px',
-    onEnter: () => document.body.classList.remove('header-on-light'),
-    onEnterBack: () => document.body.classList.remove('header-on-light'),
-    onLeaveBack: () => document.body.classList.add('header-on-light')
-  });
 }
 
 if (!reduceMotion) {
@@ -253,6 +236,12 @@ if (!reduceMotion) {
   };
 
   addFlipReveal('.stat-item', '.stats-row', 0.09);
+  document.querySelectorAll('.community-intro p').forEach((paragraph) => {
+    addFlipReveal(paragraph, paragraph);
+  });
+  addFlipReveal('.ecosystem-cta', '.ecosystem-cta');
+  addFlipReveal('.contact-eyebrow, .contact-intro h2', '.contact-intro', 0.12);
+  addFlipReveal('.contact-field, .contact-actions', '.contact-form', 0.1);
   addFlipReveal(['.services-eyebrow', '.services-intro h2'], '.services-intro', 0.12);
 
   gsap.fromTo('.service-card', {
@@ -296,20 +285,8 @@ if (!reduceMotion) {
     });
   });
 
-  gsap.fromTo(['.capabilities-eyebrow', '.capabilities-list'], {
-    opacity: 0,
-    y: 42
-  }, {
-    opacity: 1,
-    y: 0,
-    duration: 1,
-    stagger: .12,
-    ease: 'power3.out',
-    scrollTrigger: {
-      trigger: '.capabilities-section',
-      start: 'top 72%',
-      once: true
-    }
+  document.querySelectorAll('.capabilities-eyebrow, .capabilities-intro, .capabilities-list').forEach((element) => {
+    addFlipReveal(element, element);
   });
 
   gsap.fromTo(['.agenda-eyebrow', '.agenda-event'], {
@@ -425,3 +402,37 @@ if (!reduceMotion) {
     });
   }
 }
+
+
+// A cor depende da secção atual, incluindo após restaurar o scroll num refresh.
+const headerSections = [...document.querySelectorAll('main > section, main > footer')];
+const syncHeaderTheme = () => {
+  let current = document.querySelector('#hero');
+  headerSections.forEach((section) => {
+    const bounds = section.getBoundingClientRect();
+    if (!section.hidden && bounds.height > 0 && bounds.top <= 72) current = section;
+  });
+  const dark = current?.matches('.hero, .projects-stack, .site-footer');
+  document.body.classList.toggle('header-on-light', !dark);
+};
+let headerSyncPending = false;
+window.addEventListener('scroll', () => {
+  if (headerSyncPending) return;
+  headerSyncPending = true;
+  requestAnimationFrame(() => {
+    headerSyncPending = false;
+    syncHeaderTheme();
+  });
+}, { passive: true });
+ScrollTrigger.addEventListener('refresh', syncHeaderTheme);
+const restoreScrollAnimations = () => {
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    ScrollTrigger.refresh();
+    ScrollTrigger.update();
+    syncHeaderTheme();
+  }));
+};
+window.addEventListener('load', restoreScrollAnimations);
+window.addEventListener('pageshow', restoreScrollAnimations);
+document.fonts.ready.then(restoreScrollAnimations);
+syncHeaderTheme();
