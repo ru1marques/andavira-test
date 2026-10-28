@@ -128,7 +128,8 @@ img { display: block; max-width: 100%; }
 .platform-access {
   position: fixed;
   z-index: 102;
-  left: 2vw;
+  left: 50%;
+  transform: translateX(-50%);
   top: 35%;
   width: max-content;
   font-size: clamp(11px, .95vw, 15px);
@@ -155,14 +156,14 @@ img { display: block; max-width: 100%; }
 .hero-tagline {
   position: absolute;
   z-index: 6;
-  left: 50%;
+  left: 2vw;
   top: 35%;
-  transform: translate(-50%, 0);
-  width: min(34vw, 620px);
-  text-align: center;
+  transform: none;
+  width: 23vw;
+  text-align: left;
   font-family: "Andavira Geist", "Geist", Arial, sans-serif;
-  font-size: clamp(1rem, 1.8vw, 2.2rem);
-  line-height: 0.82;
+  font-size: clamp(.875rem, 1.35vw, 1.375rem);
+  line-height: 1.05;
   letter-spacing: 0.04em;
   font-weight: 500;
   text-transform: uppercase;
@@ -969,20 +970,20 @@ img { display: block; max-width: 100%; }
 @media (max-width: 800px) {
   .logo-wrap { top: 4vw; left: 3.7vw; width: 91vw; }
   .top-nav {
-    top: 50%;
+    top: 35%;
     right: calc(4vw + 92px + .7rem);
     gap: .7rem;
     font-size: 15px;
     flex-wrap: wrap;
     justify-content: flex-end;
   }
-  .candidate { top: 50%; right: 4vw; width: 92px; }
-  .platform-access { top: 64%; left: 4vw; }
+  .candidate { top: 35%; right: 4vw; width: 92px; }
+  .platform-access { top: 62%; left: 50%; width: max-content; }
   .hero-tagline {
-    left: 50%;
-    width: min(72vw, 420px);
+    left: 4vw;
+    width: 56vw;
     top: 50%;
-    font-size: clamp(0.82rem, 4.4vw, 1.8rem);
+    font-size: clamp(.875rem, 3.5vw, 1.5rem);
     letter-spacing: 0.03em;
   }
   .footer { left: 4vw; right: 4vw; bottom: 4vw; grid-template-columns: 1fr; gap: 7px; }

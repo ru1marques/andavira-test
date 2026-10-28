@@ -137,16 +137,18 @@ if (!reduceMotion) {
     left: '1.4vw',
     ease: 'power2.inOut'
   }, 0).to('.top-nav', {
-    top: '1.7vw',
-    right: 'calc(1.8vw + 108px + clamp(1rem, 1.4vw, 2.2rem))',
+    top: window.innerWidth <= 1100 ? '4rem' : '1.7vw',
+    right: window.innerWidth <= 1100 ? '4vw' : 'calc(1.8vw + 108px + clamp(1rem, 1.4vw, 2.2rem))',
     ease: 'power2.inOut'
   }, 0).to('.candidate', {
     top: '1.7vw',
     right: '1.8vw',
     ease: 'power2.inOut'
   }, 0).to('.platform-access', {
-    top: window.innerWidth <= 800 ? '4rem' : '1.7vw',
+    top: window.innerWidth <= 1100 ? '6.5rem' : '1.7vw',
     left: window.innerWidth <= 800 ? '4vw' : '15vw',
+    xPercent: 0,
+    x: 0,
     ease: 'power2.inOut'
   }, 0);
 
