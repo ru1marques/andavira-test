@@ -1,0 +1,14 @@
+Ecossistema - rede espacial com logo que se parte
+
+Ficheiros
+  index.html   estrutura e as 17 pecas do logo (inline, para poderem ser animadas)
+  style.css    estilos e cores (variaveis no topo, com modo escuro)
+  app.js       conteudo (lista NODES no topo), rede, camara e interacao
+  assets/      fotografias e logo original
+
+Abrir: duplo clique em index.html (nao precisa de servidor).
+Editar textos: lista NODES no topo de app.js.
+Fotografias: substituir os ficheiros em assets/ (proporcao 3:4); ligadas por IMG em app.js.
+Fonte: Manrope via Google Fonts (link no head do index.html). Trocar em style.css (font-family).
+Integrar numa pagina: o #stage ocupa 100% do contentor pai; dar-lhe uma altura (ex. 100vh)
+e limitar o zoom da roda a Ctrl+roda no evento wheel de app.js se a pagina fizer scroll.
