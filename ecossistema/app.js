@@ -1,4 +1,4 @@
-const NS='http://www.w3.org/2000/svg',S=1.6,C={x:142.5,y:146.5},RN=410,RC=830;
+const NS='http://www.w3.org/2000/svg',S=1.6,C={x:142.5,y:146.5},RN=410,RC=950;
 const NODES=[
 {id:'t',piece:16,short:'Territórios',title:'Territórios e Comunidades',desc:'Onde a atividade acontece e com quem se relaciona.',kids:[
 {title:'Porto',desc:'Localização institucional identificada no documento.'},
@@ -20,8 +20,26 @@ const NODES=[
 {title:'Complementaridade',desc:'Articulação de diferentes especializações culturais.'},
 {title:'Desenvolvimento e Crescimento',desc:'Condições para consolidar e fazer evoluir iniciativas especializadas.'}
 ]},
-{id:'p',piece:9,short:'Projetos',title:'Projetos e Iniciativas',desc:'Iniciativas com identidade própria, como Rodopio e Toada.',kids:['Rodopio','Toada','Novas ideias']},
-{id:'c',piece:6,short:'Pessoas',title:'Pessoas e Cooperadores',desc:'O coração da cooperativa e o elemento mais importante para a atividade.',kids:['Cooperadores','Equipa','Artistas','Voluntários']},
+{id:'p',piece:9,short:'Projetos',title:'Projetos e Iniciativas',desc:'Iniciativas criadas, promovidas ou acompanhadas pela Andavira.',kids:[
+{title:'Projetos Próprios',desc:'Iniciativas criadas ou promovidas diretamente pela Andavira.'},
+{title:'Projetos Acompanhados',desc:'Iniciativas que recebem apoio de produção, circulação ou desenvolvimento.'},
+{title:'Criação Artística',desc:'Desenvolvimento de novas propostas, obras, conteúdos e experiências culturais.'},
+{title:'Desenvolvimento de Projetos',desc:'Conceção, planeamento, orçamentação e estruturação.'},
+{title:'Produção Cultural',desc:'Produção executiva, contratação, equipas, logística e acompanhamento de atividades.'},
+{title:'Circulação Artística',desc:'Representação, programação, mobilidade e digressões.'},
+{title:'Edição e Distribuição',desc:'Projetos musicais, produção fonográfica, publicações e conteúdos editoriais.'},
+{title:'Financiamento e Sustentabilidade',desc:'Identificação de oportunidades, candidaturas e modelos de continuidade.'}
+]},
+{id:'c',piece:6,short:'Pessoas',title:'Pessoas e Cooperadores',desc:'O coração da cooperativa e o elemento mais importante para a atividade.',kids:[
+{title:'Artistas e Criadores',desc:'Profissionais responsáveis pela criação e desenvolvimento artístico.'},
+{title:'Produtores e Técnicos',desc:'Competências de produção, operação, logística e acompanhamento técnico.'},
+{title:'Formadores e Investigadores',desc:'Profissionais ligados à formação, pedagogia e produção de conhecimento.'},
+{title:'Profissionais Multidisciplinares',desc:'Pessoas de diferentes áreas que contribuem para o desenvolvimento dos projetos.'},
+{title:'Partilha de Recursos',desc:'Acesso a competências, ferramentas e meios comuns.'},
+{title:'Colaboração entre Cooperadores',desc:'Desenvolvimento conjunto de projetos e iniciativas.'},
+{title:'Participação Cooperativa',desc:'Envolvimento nas decisões e na construção da estrutura comum.'},
+{title:'Desenvolvimento Profissional',desc:'Formação, oportunidades e condições para fortalecer percursos profissionais.'}
+]},
 {id:'r',piece:3,short:'Parceiros',title:'Parceiros e Redes',desc:'Quem faz parte da cooperativa e mobiliza competências.',kids:[
 {title:'Municípios e Entidades Públicas',desc:'Relações para programação, projetos e desenvolvimento cultural.'},
 {title:'Festivais e Equipamentos Culturais',desc:'Articulação para apresentação, produção e circulação artística.'},
@@ -68,7 +86,7 @@ NODES.forEach((n,i)=>{
   if(preview){n.K=[];return;}
   const m=n.kids.length;n.K=n.kids.map((t,j)=>{
     const detailed=typeof t==='object';
-    const aa=a+(j-(m-1)/2)*.3,r=RC+[0,60,-30,45][j%4],P={x:r*Math.cos(aa),y:r*Math.sin(aa)};
+    const aa=a+(j-(m-1)/2)*.33,r=RC+[0,75,-35,55][j%4],P={x:r*Math.cos(aa),y:r*Math.sin(aa)};
     const k=document.createElement('div');k.className='k n';k.dataset.s=Math.cos(aa)<0?'l':'r';k.style.cssText=`left:${P.x}px;top:${P.y}px;--d:${2.2+i*.1}s`;
     if(detailed)k.classList.add('has-description');
     if(detailed&&t.number)k.classList.add('featured');
@@ -81,7 +99,7 @@ function separateLabels(n){
   const rect=(P,label)=>({x:P.x+label.offsetLeft,y:P.y+label.offsetTop,w:label.offsetWidth,h:label.offsetHeight});
   const move=(item,dx,dy)=>{item.P.x+=dx;item.P.y+=dy};
   const separate=(a,b,fixed=false)=>{
-    const A=rect(a.P,a.label),B=rect(b.P,b.label),gap=32;
+    const A=rect(a.P,a.label),B=rect(b.P,b.label),gap=56;
     const dx=(A.w+B.w)/2+gap-Math.abs(A.x+A.w/2-B.x-B.w/2);
     const dy=(A.h+B.h)/2+gap-Math.abs(A.y+A.h/2-B.y-B.h/2);
     if(dx<=0||dy<=0)return false;

@@ -94,7 +94,7 @@ body::-webkit-scrollbar { display: none; }
   border: 1px solid #ffffff30;
   border-radius: 12px;
   background: #514a43;
-  font: 13px/1.4 system-ui, sans-serif;
+  font: 13px/1.4 "Andavira Geist", Arial, sans-serif;
 }
 
 .controls label { display: flex; align-items: center; gap: 10px; }
